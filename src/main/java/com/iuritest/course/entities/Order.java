@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.iuritest.course.entities.enums.OrderStatus;
 
 import jakarta.persistence.Entity;
@@ -33,7 +33,7 @@ public class Order implements Serializable {
 	
 	private Integer orderStatus;
 	
-	@JsonIgnore
+	@JsonManagedReference
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
